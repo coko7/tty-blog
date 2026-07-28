@@ -256,7 +256,7 @@ The only features I added so far are:
 
 **Levenshtein** is probably not the most suited thing here but I wanted to have some fun.
 
-I got the idea from my previous project; [MéMonde](https://memonde.lazyfreax.dev), an open-source Geography game where you have to guess all the countries of the world in 15 minutes.
+I got the idea from my previous project; [MéMonde](https://coko7.github.io/memonde), an open-source Geography game where you have to guess all the countries of the world in 15 minutes.
 
 **Levenshtein** works really well for this Geography game since there are a lot of countries to enter and you are under time pressure so having a system that does not require perfect spelling is a nice thing to have.
 
