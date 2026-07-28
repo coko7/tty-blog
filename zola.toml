@@ -1,0 +1,94 @@
+# The URL the site will be built for
+base_url = "https://tty.lazyfreax.dev"
+
+# The site title and description; used in feeds by default.
+title = "The Terminal Yard"
+description = "Writing about terminals and linux"
+
+# The default language; used in feeds.
+default_language = "en"
+
+# The site theme to use.
+theme = "terminus"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# When set to "true", a feed is automatically generated.
+generate_feeds = true
+
+# The default author for pages
+author = "coko"
+
+# The taxonomies to be rendered for the site and their configuration of the default languages
+# Example:
+#     taxonomies = [
+#       {name = "tags", feed = true}, # each tag will have its own feed
+#       {name = "tags"}, # you can have taxonomies with the same name in multiple languages
+#       {name = "categories", paginate_by = 5},  # 5 items per page for a term
+#       {name = "authors"}, # Basic definition: no feed or pagination
+#     ]
+#
+taxonomies = [
+  { name = "tags", feed = true },                        # each tag will have its own feed
+  { name = "categories", feed = true, paginate_by = 5 },
+]
+
+[markdown]
+insert_anchor_links = "right" # or "left" / "heading"
+
+# When set to "true", support for GitHub-style alerts, a.k.a. callouts or admonitions, is enabled in the Markdown parser.
+# For example, this Markdown syntax:
+#
+#     > [!NOTE]
+#     > alert note
+#
+# will result in the following generated HTML:
+#
+#     <blockquote class="markdown-alert-note">
+#     <p>alert note</p>
+#     </blockquote>
+#
+# where the CSS class name suffix may be `note`, `tip`, `important`, `warning`, or `caution`, depending on the alert type.
+# Visual appearance depends on theme-level support; refer to your theme's documentation for more information.
+github_alerts = true
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+stylesheets = [
+  "custom.css",
+] # matches the compiled output path of sass/custom.scss
+
+# Customize the overall color scheme of the site.
+#
+# Supported color schemes: "terminus", "tokyo-night", "solarized-dark", "nord",
+# "one-dark", "gruvbox-dark", "oled-abyss", "solar-flare", "catppuccin-latte",
+# "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
+# "synthwave-84".
+color_scheme = "catppuccin-mocha"
+
+# Enable dynamic color scheme switcher in site navigation bar (requires JS).
+color_scheme_switcher = true
+
+main_menu = [
+  { name = "Posts", url = "blog", trailing_slash = true },
+  { name = "Tags", url = "tags", trailing_slash = true },
+  # { name = "internal link 1", url = "resume.pdf" },
+  { name = "Portfolio", url = "https://nrd.coko7.fr", new_tab = true },
+]
+
+# favicon = "images/favicon.png"
+favicon_emoji = "🐚"
+
+# Put all your custom variables here
+socials = [
+  { name = "github", url = "https://github.com/coko7" },
+  { name = "forgejo", url = "https://git.lazyfreax.dev/coko" },
+  { name = "bluesky", url = "https://bsky.app/profile/cobalt-kook.bsky.social" },
+  { name = "linkedin", url = "https://www.linkedin.com/in/corentin-humbert/" },
+  { name = "mastodon", url = "https://mastodon.social/@cobalt_cook718" },
+  { name = "x", url = "https://x.com/cobalt_kook" },
+  { name = "email", url = "mailto:contact@coko7.fr" },
+]

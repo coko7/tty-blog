@@ -1,0 +1,11 @@
+.theme-img-light { display: none; }
+
+// Show light image only when a light scheme is active
+body[data-theme="catppuccin-latte"] .theme-img-light,
+body[data-theme="solar-flare"] .theme-img-light {
+    display: initial;
+}
+body[data-theme="catppuccin-latte"] .theme-img-dark,
+body[data-theme="solar-flare"] .theme-img-dark {
+    display: none;
+}

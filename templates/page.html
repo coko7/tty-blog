@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{%- import "macros/toc.html" as toc_macros -%}
+
+{%- block title -%}
+{{ page.title }} | {{ config.title }}
+{%- endblock -%}
+
+{%- block description -%}
+    {%- if page.description %}
+    <meta name="description" content="{{ page.description | markdown(inline=true) | striptags }}">
+    {%- elif page.summary %}
+    <meta name="description" content="{{ page.summary | linebreaksbr | replace(from="<br>", to=" ") | striptags | trim_end_matches(pat=".") | replace(from='"', to="&quot;") | replace(from="&", to="&amp;") | safe }}…">
+    {%- elif config.description %}
+    <meta name="description" content="{{ config.description }}">
+    {%- endif %}
+{%- endblock -%}
+
+{%- block translations -%}
+    {%- for translation in page.translations -%}
+    <link rel="alternate" hreflang="{{ translation.lang }}" href="{{ translation.permalink | safe }}">
+    {% endfor -%}
+{%- endblock -%}
+
+{%- block main -%}
+{%- filter indent -%}{%- filter indent -%}
+<article class="post content">
+    {{ post_macros::header(page=page, heading="h1") | indent | safe }}
+{%- endfilter %}{%- endfilter %}
+
+<!-- Custom Table of Content block -->
+{%- if page.extra.toc and page.toc %}
+<nav class="table-of-contents">
+    <h2>Table of Contents</h2>
+    {{ toc_macros::render(toc=page.toc) }}
+</nav>
+{%- endif %}
+
+{{ page.content | safe }}
+
+{%- filter indent -%}{%- filter indent %}
+</article>
+{%- if page.lower or page.higher %}
+<nav class="post-navigation">
+    <header class="post-navigation-title">
+        <h2>Read More Posts</h2>
+        <hr>
+    </header>
+    <div class="post-navigation-buttons">
+        {%- if page.lower %}
+        <a rel="next" href="{{ page.lower.permalink | safe }}" aria-label="Next article" aria-describedby="next-title">
+            &lt;&nbsp;[<span id="next-title">{{- page.lower.title | truncate(value=100, end="…") -}}</span>]
+        </a>
+        {%- endif %}
+        {%- if page.lower and page.higher %}
+        <span aria-hidden="true" role="separator">::</span>
+        {%- endif %}
+        {%- if page.higher %}
+        <a rel="prev" href="{{ page.higher.permalink | safe }}" aria-label="Prev article" aria-describedby="prev-title">
+            [<span id="prev-title">{{- page.higher.title | truncate(value=100, end="…") -}}</span>]&nbsp;&gt;
+        </a>
+        {%- endif %}
+    </div>
+</nav>
+{%- endif %}
+{% include "partials/comments.html" -%}
+{% endfilter %}{% endfilter %}
+{%- endblock -%}

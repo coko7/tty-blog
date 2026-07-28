@@ -1,0 +1,12 @@
+{%- macro render(toc) -%}
+<ul>
+    {%- for h in toc %}
+    <li>
+        <a href="{{ h.permalink | safe }}">{{ h.title }}</a>
+        {%- if h.children %}
+        {{ self::render(toc=h.children) }}
+        {%- endif %}
+    </li>
+    {%- endfor %}
+</ul>
+{%- endmacro render -%}
