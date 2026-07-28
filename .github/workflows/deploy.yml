@@ -15,7 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-            submodules: recursive
+          submodules: recursive
+          lfs: true
       - uses: taiki-e/install-action@v2
         with:
           tool: zola
