@@ -21,6 +21,4 @@ The curious-looking contraption I wear on my head is a [Corne keyboard](https://
 
 ![Corne keyboard with Ergo-L key layout](./images/crkbd.png)
 
-~I don't actually wear it on my head~ but if you want to know more about how I use this thing, it is documented on my [GitHub](https://github.com/Coko7/crkbd).
-
-Finally, if you are looking for the nerd-*ier* version of this portfolio page. It is still available at [nrd.coko7.fr](https://nrd.coko7.fr)
+~I don't actually wear it on my head~ but if you want to know more about how I use this thing, it is documented on my [GitHub](https://github.com/coko7/crkbd).

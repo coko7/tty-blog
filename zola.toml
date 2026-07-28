@@ -77,7 +77,7 @@ main_menu = [
   { name = "Tags", url = "tags", trailing_slash = true },
   # { name = "internal link 1", url = "resume.pdf" },
   { name = "Source", url = "https://github.com/coko7/tty-blog", new_tab = true },
-  { name = "Portfolio", url = "https://nrd.coko7.fr", new_tab = true },
+  { name = "Portfolio", url = "https://lazyfreax.dev", new_tab = true },
 ]
 
 # favicon = "images/favicon.png"
