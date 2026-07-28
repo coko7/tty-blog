@@ -1,5 +1,7 @@
 # ✍️ tty-blog
 
-Source code for my `zola` blog: **The Terminal Yard**.
+Source code for my [`zola`](https://github.com/getzola/zola) blog: **The Terminal Yard**.
+
+![GitHub banner](./gh-banner.png)
 
 [![Deployment](https://github.com/coko7/tty-blog/actions/workflows/deploy.yml/badge.svg)](https://github.com/coko7/tty-blog/actions/workflows/deploy.yml)
