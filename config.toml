@@ -104,3 +104,11 @@ domains = ["'self'", "https://utteranc.es"]
 [[extra.content_security_policy.allowed_domains]]
 directive = "frame-src"
 domains = ["https://utteranc.es"]
+
+[[extra.content_security_policy.allowed_domains]]
+directive = "connect-src"
+domains = ["'self'", "https://api.github.com", "https://utteranc.es"]
+
+[[extra.content_security_policy.allowed_domains]]
+directive = "style-src-attr"
+domains = ["'unsafe-inline'"]
