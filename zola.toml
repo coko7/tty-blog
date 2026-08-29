@@ -93,3 +93,13 @@ socials = [
   { name = "x", url = "https://x.com/cobalt_kook" },
   { name = "email", url = "mailto:contact@coko7.fr" },
 ]
+[extra.content_security_policy]
+enable = true
+
+[[extra.content_security_policy.allowed_domains]]
+directive = "script-src"
+domains = ["https://utteranc.es"]
+
+[[extra.content_security_policy.allowed_domains]]
+directive = "frame-src"
+domains = ["https://utteranc.es"]
