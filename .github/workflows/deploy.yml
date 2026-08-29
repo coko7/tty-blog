@@ -19,7 +19,7 @@ jobs:
           lfs: true
       - uses: taiki-e/install-action@v2
         with:
-          tool: zola
+          tool: zola@0.22.0
       - run: zola build
       - uses: actions/upload-pages-artifact@v3
         with:
